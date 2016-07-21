@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Time Slots</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Belongs to</th>
+      <th>Appointment time</th>
+      <th>Duration</th>
+      <th>Researcher</th>
+      <th>Status</th>
+      <th>Subject</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @experiment.time_slots.each do |time_slot| %>
+      <tr>
+        <td><%= time_slot.experiment_id %></td>
+        <td><%= time_slot.appointment_time %></td>
+        <td><%= time_slot.duration %></td>
+        <td><%= time_slot.researcher_id %></td>
+        <td><%= time_slot.status %></td>
+        <td><%= time_slot.subject_id %></td>
+        <td><%= link_to 'Show', [time_slot.experiment, time_slot] %></td>
+        <td><%= link_to 'Edit', edit_experiment_time_slot_path(@experiment, time_slot) %></td>
+        <td><%= link_to 'Destroy', [time_slot.experiment, time_slot], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Time slot', new_experiment_time_slot_path(@experiment) %>

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :experiments
+
+  resources :experiments do
+    resources :time_slots
+  end
   root 'welcome#index'
 
   devise_for :users

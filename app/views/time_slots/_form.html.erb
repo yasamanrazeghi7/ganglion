@@ -1,0 +1,34 @@
+<%= form_for([@experiment, @experiment.time_slots.build]) do |f| %>
+ <!--
+  <%# if @time_slot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%#= pluralize(@time_slot.errors.count, "error") %> prohibited this time_slot from being saved:</h2>
+
+      <ul>
+      <%# @time_slot.errors.full_messages.each do |message| %>
+        <li><%#= message %></li>
+      <%# end %>
+      </ul>
+    </div>
+  <%# end %>
+-->
+  <div class="field">
+    <%= f.label :appointment_time %><br>
+    <%= f.datetime_select :appointment_time %>
+  </div>
+  <div class="field">
+    <%= f.label :researcher_id %><br>
+    <%= f.number_field :researcher_id %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :subject_id %><br>
+    <%= f.number_field :subject_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

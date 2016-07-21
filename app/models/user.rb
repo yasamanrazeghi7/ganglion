@@ -6,5 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :experiments
+  has_many :subject_time_slots, :foreign_key => 'subject_id', :class_name => 'Timeslot'
+  has_many :researcher_time_slots, :foreign_key => 'researcher_id', :class_name => 'Timeslot'
+
 
 end

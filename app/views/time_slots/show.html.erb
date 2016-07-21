@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Experiment:</strong>
+  <%= @time_slot.experiment_id %>
+</p>
+
+<p>
+  <strong>Appointment time:</strong>
+  <%= @time_slot.appointment_time %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @time_slot.duration %>
+</p>
+
+
+<p>
+  <strong>Researcher:</strong>
+  <%= @time_slot.researcher_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @time_slot.status %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @time_slot.subject_id %>
+</p>
+
+<%= link_to 'Edit', edit_experiment_time_slot_path(@experiment, @time_slot) %> |
+<%= link_to 'Back', experiment_time_slots_path(@experiment) %>

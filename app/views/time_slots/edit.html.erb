@@ -1,0 +1,29 @@
+<h1>Editing Time Slot</h1>
+
+<%#= render 'form' %>
+
+<%= form_for([@experiment, @time_slot]) do |f| %>
+    <div class="field">
+      <%= f.label :appointment_time %><br>
+      <%= f.datetime_select :appointment_time %>
+    </div>
+    <div class="field">
+      <%= f.label :researcher_id %><br>
+      <%= f.number_field :researcher_id %>
+    </div>
+    <div class="field">
+      <%= f.label :status %><br>
+      <%= f.text_field :status %>
+    </div>
+    <div class="field">
+      <%= f.label :subject_id %><br>
+      <%= f.number_field :subject_id %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+
+<%= link_to 'Show', experiment_time_slot_path(@experiment, @time_slot) %> |
+<%= link_to 'Back', experiment_time_slot_path %>
