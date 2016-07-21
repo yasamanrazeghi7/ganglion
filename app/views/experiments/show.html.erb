@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @experiment.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @experiment.description %>
+</p>
+
+<p>
+  <strong>Researcher:</strong>
+  <%= @experiment.researcher_id %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @experiment.is_active %>
+</p>
+
+<%= link_to 'Edit', edit_experiment_path(@experiment) %> |
+<%= link_to 'Back', experiments_path %>
